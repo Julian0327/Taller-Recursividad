@@ -9,7 +9,8 @@ public class App {
         Consola consola = new ConsolaScanner();
 
         List<Ejercicio> ejercicios = Arrays.asList(
-                new Ejercicio1(consola));
+                new Ejercicio1(consola),
+                new Ejercicio2(consola));
 
         new Menu(ejercicios, consola).iniciar();
     }
