@@ -1,35 +1,34 @@
 package Recursividad;
 
+import java.util.Arrays;
+
 public class Ejercicio10 extends EjercicioBase {
+
+    private final LectorDatos lector;
 
     public Ejercicio10(Consola consola) {
         super(10, "Suma de los elementos de un arreglo", consola);
-    }
-
-    private int[] pedirArreglo() {
-        int[] arreglo = new int[consola.leerEntero("Ingrese la longitud del arreglo: ")];
-        for (int i = 0; i < arreglo.length; i++) {
-            arreglo[i] = consola.leerEntero("Ingrese el elemento " + (i + 1) + ": ");
-        }
-        return arreglo;
-    }
-
-    private void mostrarResultado(int[] arreglo, int suma) {
-        consola.mostrar("La suma de los elementos del arreglo es " + suma);
-    }
-
-    private int sumarArreglo(int[] arreglo, int indice) {
-        if (indice == arreglo.length) {
-            return 0;
-        }
-        return arreglo[indice] + sumarArreglo(arreglo, indice + 1);
+        this.lector = new LectorDatos(consola);
     }
 
     @Override
     public void resolver() {
-        int[] arreglo = pedirArreglo();
-        int suma = sumarArreglo(arreglo, 0);
+        int[] arreglo = this.lector.leerArreglo();
+        int suma = 0;
+        suma = sumaVector(arreglo, 0);
         mostrarResultado(arreglo, suma);
+    }
+
+    private int sumaVector(int[] arreglo, int i) {
+        if (i == arreglo.length) {
+            return 0;
+        }
+        return arreglo[i] + sumaVector(arreglo, i + 1);
+    }
+
+    private void mostrarResultado(int[] arreglo, int suma) {
+        consola.mostrar("El vector es: " + Arrays.toString(arreglo));
+        consola.mostrar("La suma de los elementos del vector es: " + suma);
     }
 
 }
