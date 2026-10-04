@@ -15,7 +15,8 @@ public class App {
                 new Ejercicio4(consola),
                 new Ejercicio5(consola),
                 new Ejercicio6(consola),
-                new Ejercicio7(consola));
+                new Ejercicio7(consola),
+                new Ejercicio8(consola));
 
         new Menu(ejercicios, consola).iniciar();
     }
