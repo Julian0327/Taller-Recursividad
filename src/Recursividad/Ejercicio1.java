@@ -13,7 +13,7 @@ public class Ejercicio1 extends EjercicioBase {
     }
 
     @Override
-    protected void resolver() {
+    public void resolver() {
         int n = pedirNumero();
         BigInteger resultado = factorial(n);
         mostrarResultado(n, resultado);
