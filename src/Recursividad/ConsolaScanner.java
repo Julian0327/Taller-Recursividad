@@ -31,6 +31,12 @@ public class ConsolaScanner implements Consola {
     }
 
     @Override
+    public String leerCadena(String mensaje) {
+        System.out.print(mensaje);
+        return scanner.nextLine();
+    }
+
+    @Override
     public void mostrar(String mensaje) {
         System.out.println(mensaje);
     }

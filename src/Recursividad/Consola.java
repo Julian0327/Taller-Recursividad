@@ -5,5 +5,7 @@ public interface Consola {
 
     double leerDecimal(String mensaje);
 
+    String leerCadena(String mensaje);
+
     void mostrar(String mensaje);
 }
